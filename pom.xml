@@ -73,8 +73,8 @@
 
 	</dependencies>
 
-	<build>
-		<finalName>CounterWebApp</finalName>
+	<build>	
+		<finalName>Jenkins-Pipeline_Automate</finalName>
 
 		<plugins>
 		    <!-- Eclipse project -->
@@ -101,18 +101,3 @@
 					<target>${jdk.version}</target>
 				</configuration>
 			</plugin>
-
-			<!-- For Tomcat -->
-			<plugin>
-				<groupId>org.apache.tomcat.maven</groupId>
-				<artifactId>tomcat7-maven-plugin</artifactId>
-				<version>2.2</version>
-				<configuration>
-					<path>/CounterWebApp</path>
-				</configuration>
-			</plugin>
-
-		</plugins>
-
-	</build>
-</project>
