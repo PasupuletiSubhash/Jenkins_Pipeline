@@ -8,9 +8,11 @@ RUN apt update -y \
     && rm -rf /var/www/html/* \
     && unzip latest.zip -d /var/www/html/ \
     && mv /var/www/html/wordpress/* /var/www/html/ \
-    && mv /var/www/html/wp-config-sample.php  /var/www/html/wp-config.php
-
-COPY wp-config.php /var/www/html
+    && mv /var/www/html/wp-config-sample.php  /var/www/html/wp-config.php \
+    && sed -i 's/database_name_here/wordpress/g' /var/www/html/wp-config.php \
+    && sed -i 's/username_here/admin/g' /var/www/html/wp-config.php \
+    && sed -i 's/password_here/Qwert123/g' /var/www/html/wp-config.php \
+    && sed -i 's/localhost/database-1.cp35ofbjjbaa.us-east-1.rds.amazonaws.com/g' /var/www/html/wp-config.php
 
 EXPOSE 3306
 EXPOSE 80
