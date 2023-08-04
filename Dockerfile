@@ -4,7 +4,6 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 RUN apt update -y \
     && apt install wget mariadb-server tzdata -y \
     && apt install unzip php apache2 php-mysqlnd -y \
-    && apt install mod_ssl openssl -y \
     && wget https://wordpress.org/latest.zip \
     && rm -rf /var/www/html/* \
     && unzip latest.zip -d /var/www/html/ \
